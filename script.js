@@ -32,56 +32,32 @@ whoStarts.addEventListener('click', () => {
 
 let currentGamer = "X";
 
-function startGame() {
-    currentGamer = "X";
-}
 
-start.addEventListener('click', startGame);
 const fieldSquares = document.querySelectorAll('.field'); // variable stores 9 divs from the game field
-let result = [];
-fieldSquares.forEach((square,i) => {
+console.log(fieldSquares);
+fieldSquares.forEach((square, i) => {
     square.addEventListener("click", function(event) {
-        console.log(currentGamer);
-        if (currentGamer == "O") {
+        if (currentGamer == "X") {
             if (event.target.innerText == "") {
-                event.target.innerText = "O";
-                currentGamer = "X";
-                result.push(i);
+                event.target.innerText = "X";
+                currentGamer = "O"; 
                 console.log(currentGamer);
                 showsWhoStarts.innerText = `${name1.value}'s turn`;
             }
         } 
-        
-        if (currentGamer == "X" ) {
+        if (currentGamer == "O") {
             if (event.target.innerText == "") {
-                event.target.innerText = "X";
-                currentGamer = "O";
+                event.target.innerText = "O";
+                currentGamer = "X";
                 console.log(currentGamer);
-                result.push(i);
-                showsWhoStarts.innerText = `${name2.value}'s turn`
+                showsWhoStarts.innerText = `${name2.value}'s turn`;
             }
-  
         }
-    console.log(result)
-
     })
 })
 
+// const fieldValues = [...fieldSquares].map((square) => { // copy array
+//     return square.innerText;
+// })
+// console.log(fieldValues);
 
-const winningConditions = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
-    [0, 4, 8],
-    [2, 4, 6]
-];
-
-      // if (currentGamer == "X") {
-        //     event.target.innerText = "0";
-        //     currentGamer = "0";
-        //     result.push(i);
-        //     console.log(currentGamer)
-        //     showsWhoStarts.innerText = `${name1.value}'s turn`

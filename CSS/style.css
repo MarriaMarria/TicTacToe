@@ -26,6 +26,11 @@ input {
 button {
     margin: 20px;
 }
+
+#showsWhoStarts {
+    padding: 10px;
+}
+
 .grid {
     width: 500px;
     height: 500px;

@@ -1,58 +1,180 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     text-align: center;
-    background-color: rgb(18, 165, 121);
+    background-image: url(../Media/efe-kurnaz-RnCPiXixooY-unsplash.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
 }
 
-header {
-    height: 50px;
+@font-face {
+    font-family: Monoton-Regular;
+    src: url(../Media/monoton/Monoton-Regular.ttf);
 }
 
-h1 {
+.neon {
+    font-family: Monoton-Regular;
+    font-size: 4rem;
+    color:#dee2a4;
+    margin-top: 25px;
+
+
+    text-shadow: 
+    .1vw 0vw .25vw #fdf8cb, .2vw 0vw .25vw #fdf8cb, .4vw 0vw .25vw #fdf8cb, 
+    
+    .1vw 0vw   0vw #f5f69f, .2vw 0vw   0vw #f5f69f, .4vw 0vw   0vw #f5f69f,
+    .1vw 0vw  .1vw #f6e75d, .2vw 0vw  .1vw #f6e75d, .4vw 0vw  .1vw #f6e75d,
+    .1vw 0vw   2vw #eff148, .2vw 0vw   2vw #eff148, .4vw 0vw   2vw #eff148, 
+    
+    .1vw 0vw   1vw #f1de36, .2vw 0vw   1vw #f1de36, .4vw 0vw   5vw #f1de36, 
+    .1vw 0vw   5vw #dbc818, .2vw 0vw  20vw #dbc818, .4vw 0vw  10vw #dbc818,
+    .1vw 0vw  10vw #f0c508, .2vw 0vw  30vw #f0c508, .4vw 0vw  10vw #f0c508;
+}
+
+.neonWelcome h2{
+    color: rgb(166, 16, 172);
+    font-family: Monoton-Regular;
+    font-size: 3em;
+    text-shadow: 
+    .1vw 0vw .25vw #fbcbfd, .2vw 0vw .25vw #fbcbfd, .4vw 0vw .25vw #fbcbfd, 
+    
+    .1vw 0vw   0vw #edaffa, .2vw 0vw   0vw #edaffa, .4vw 0vw   0vw #edaffa,
+    .1vw 0vw  .1vw #f898eb, .2vw 0vw  .1vw #f898eb, .4vw 0vw  .1vw #f898eb,
+    .1vw 0vw   2vw #da81e6, .2vw 0vw   2vw #da81e6, .4vw 0vw   2vw #da81e6, 
+    
+    .1vw 0vw   1vw #d555ec, .2vw 0vw   1vw #d555ec, .4vw 0vw   5vw #d555ec, 
+    .1vw 0vw   5vw #bc3cd3, .2vw 0vw  20vw #bc3cd3, .4vw 0vw  10vw #bc3cd3,
+    .1vw 0vw  10vw #420544, .2vw 0vw  30vw #420544, .4vw 0vw  10vw #420544;
+}
+
+.intro {
+    float: left;
+    margin-left: 20%;
     margin-top: 25px;
 }
 
 h3 {
     margin-top: 20px;
+    font-family: Monoton-Regular;
+    color:rgb(6, 32, 44);
+    font-size: 1.7em;
+}
+
+#start {
+    font-size: 2em;
 }
 
 input {
     margin: 10px;
-}
-button {
-    margin: 20px;
+    padding: 10px;
+    border: 2px solid rgba(210, 105, 231, 0.7);
+    box-shadow: 1px 1px 15px 4px rgb(232, 137, 241);
+    border-radius: 15px;
 }
 
-#showsWhoStarts {
+input:hover {
+    background: transparent;
+    transition-duration: 1s;
+}
+
+button {
+    margin-top: 20px;
+}
+
+#startText {
     padding: 10px;
+    color:rgb(35, 144, 21);
+    text-shadow: rgb(42, 212, 19);
+    font-size: 2em;
 }
 
 .grid {
-    width: 500px;
-    height: 500px;
-    margin: 0 auto;
-    border: 1px solid black;
+    float: right;
+    width: 420px;
+    height: 420px;
+    margin-right: 20%;
+    margin-top: 55px;
     display: grid;
 
     grid-template: repeat(3, 1fr) / repeat(3, 1fr);
+    padding: 0.3em;
+    border-radius: 5%;
+    border: 0.2rem solid #fff;
+
+    color: #fff;
+    box-shadow:
+    0 0 .5rem #fff,
+    inset 0 0 .5rem #fff,
+    0 0 2rem #08f,
+    inset 0 0 2rem #08f,
+    0 0 4rem #08f,
+    inset 0 0 4rem #08f;        
+    }    
+.neon::-moz-selection {
+    background-color: #08f;  
+}
+.neon::selection {
+    background-color: #08f;
+}
+.neon:focus {
+    outline: none;
 }
 
+
 .field {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: cornflowerblue;
+    background-color: rgba(198, 95, 230, 0.6);
+}
+
+.field:hover {
+    background: transparent;
+    transition-duration: 1s;
+}
+
+.top {
+    border-bottom: 0.2rem solid #fff;
+    border-right: 0.2rem solid #fff;
+    box-shadow: 0.2rem 0.2rem .5rem #fff;
+}
+
+.center {
+    border-bottom: 0.2rem solid #fff;
+    border-right: 0.2rem solid #fff;
+    box-shadow: 0.2rem 0.2rem .5rem #fff;
+}
+
+.down {
+    border-right: 0.2rem solid #fff;
+    box-shadow: 0.2rem 0.2rem .5rem #fff;
+}
+
+.right {
+    border-right: none;
 }
 
 .flex-cnt {
     display: flex;
     width: 100%;
     text-align: center;
+}
+
+#start {
+    margin: 10px;
+    padding: 10px;
+    border: 2px solid rgba(241, 44, 176, 0.7);
+    box-shadow: 1px 1px 15px 4px rgb(200, 9, 185);
+    border-radius: 15px;
+    transition-duration: 1s;
 }
 
 #restart-button,
@@ -65,4 +187,26 @@ button {
     width: 150px;
     margin: 50px 0 0 120px;
 
+}
+
+#winner {
+    height: 500px;
+    width: 600px;
+    position: absolute;
+    left: 410px;
+    border: 5px solid black;
+
+    background-color: rgb(83, 146, 138);
+    display: none;
+}
+
+#draw {
+    height: 500px;
+    width: 600px;
+    position: absolute;
+    left: 410px;
+    border: 5px solid black;
+
+    background-color: rgb(200, 218, 123);
+    display: none;
 }

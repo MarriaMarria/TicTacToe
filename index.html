@@ -8,11 +8,14 @@
 </head>
 
 <body>
-    <header>
+    <div class="neon">
         <h1>Tic-Tac-Toe</h1>
-    </header>
-
+    </div>
+    <div class="neonWelcome">
         <h2>Welcome to the game!</h2>
+    </div>
+    <div class="intro">
+
         <h3>Player one, what is your name?</h3>
 
             <input type="text" id="name1" placeholder="name">
@@ -25,21 +28,32 @@
             <button id="nameSubmit">Enter</button>
             <p id="storeName2"></p>
 
-        <h3>Let's decide who starts!</h3>
+        <h3 id="startText">Let's decide who starts!</h3>
         <button id="whoStarts">Throw the dice</button>
         <p id="showsWhoStarts"></p>
+        
         <button id="start">Start the game</button>
 
+
+        <div id="winner">
+            <p></p>
+        </div>
+        <div id="draw">
+            <p></p>
+        </div>
+
+    </div> 
+
     <div class="grid">
-        <div class="field"></div>
-        <div class="field"></div>
-        <div class="field"></div>
-        <div class="field"></div>
-        <div class="field"></div>
-        <div class="field"></div>
-        <div class="field"></div>
-        <div class="field"></div>
-        <div class="field"></div>
+        <div class="field top"></div>
+        <div class="field top"></div>
+        <div class="field top right"></div>
+        <div class="field center"></div>
+        <div class="field center"></div>
+        <div class="field center right"></div>
+        <div class="field down"></div>
+        <div class="field down"></div>
+        <div class="field down right"></div>
     </div>
     
     <div class="flex-cnt">

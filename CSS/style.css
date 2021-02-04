@@ -77,6 +77,9 @@ input {
     border: 2px solid rgba(210, 105, 231, 0.7);
     box-shadow: 1px 1px 15px 4px rgb(232, 137, 241);
     border-radius: 15px;
+    font-size: 1.5em;
+    color:rgb(200, 9, 185);
+    font-weight: 700;
 }
 
 input:hover {
@@ -168,13 +171,34 @@ button {
     text-align: center;
 }
 
-#start {
+#storeName2,
+#showsWhoStarts {
+    font-size: 1.5em;
+    color:rgb(12, 9, 200);
+    font-weight: 700;
+    padding: 10px;
+    margin: 10px;
+}
+
+.xoDecoration {
+    font-size: 2.5em;
+    font-weight: bold;
+    color:rgb(255, 255, 255);
+}
+
+#start,
+#nameSubmit,
+#whoStarts {
     margin: 10px;
     padding: 10px;
     border: 2px solid rgba(241, 44, 176, 0.7);
     box-shadow: 1px 1px 15px 4px rgb(200, 9, 185);
     border-radius: 15px;
     transition-duration: 1s;
+    font-size: 1.5em;
+    color:rgb(200, 9, 185);
+    font-weight: 700;
+
 }
 
 #restart-button,

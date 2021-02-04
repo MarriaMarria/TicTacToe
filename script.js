@@ -35,43 +35,62 @@ whoStarts.addEventListener('click', () => {
 
 let currentGamer = "X";
 
+changeStyle = document.querySelector(".field");
+
+// for (x in changeStyle) {
+//     x.style.fontSize = "2em";
+// }
+
+
+// currentGamer.innerText.style.fontSize = "2em";
+// // currentGamer.style.fontWeight = "bold";
+// // currentGamer.style.color = "white";
+
 const fieldSquares = document.querySelectorAll('.field'); // variable stores 9 divs from the game field
 console.log(fieldSquares);
 
-count = 9 // to check fo the draw
+
 // adding an event listener to all 9 squares with the class field
 fieldSquares.forEach((square, i) => {
     square.addEventListener("click", function(event) {
-
+        count = 9 // to check fo the draw
         let isWinner = checkWinner();
-        if (isWinner) {
-            winner.style.display = "block"; // brings the pop up window with congratulations
-            return
+            if (isWinner) {
+                alert("You won!")
+            }
+        // if (isWinner) {
+        //     winner.style.display = "block"; // brings the pop up window with congratulations
+        //     return
 
-        }
+        // }
 
         if (currentGamer == "X") {
             if (event.target.innerText == "") { // checking if the square is empty
                 event.target.innerText = "X";
+                event.target.classList.add("xoDecoration");
                 currentGamer = "O"; 
                 console.log(currentGamer);
                 showsWhoStarts.innerText = `${name1.value}'s turn`;
                 count -= 1;
                 console.log(count);
+                checkWinner();
             }
         } 
         if (currentGamer == "O") {
             if (event.target.innerText == "") {
                 event.target.innerText = "O";
+                event.target.classList.add("xoDecoration");
                 currentGamer = "X";
                 console.log(currentGamer);
                 showsWhoStarts.innerText = `${name2.value}'s turn`;
                 count -= 1;
                 console.log(count);
+                checkWinner();
             }
         }
         checkIfDraw(); 
         checkWinner();
+        checkIfDraw();
     })
 })
 
@@ -79,7 +98,7 @@ fieldSquares.forEach((square, i) => {
 function checkIfDraw() {
     if (count = 0) {
         console.log("It's a draw!");
-        draw.style.display = "block";
+        // draw.style.display = "block";
     }
 }
 

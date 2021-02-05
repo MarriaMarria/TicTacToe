@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+}
+
+body {
+    text-align: center;
+    background-image: url(../Media/efe-kurnaz-RnCPiXixooY-unsplash.jpg);
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin: 0 auto;
+    font-family: 'Handlee', cursive;
+
+}
+
+@font-face {
+    font-family: Monoton-Regular;
+    src: url(../Media/monoton/Monoton-Regular.ttf);
+}
+
+.neon {
+    font-family: Monoton-Regular;
+    font-size: 4rem;
+    color:#dee2a4;
+    margin-top: 25px;
+
+
+    text-shadow: 
+    .1vw 0vw .25vw #fdf8cb, .2vw 0vw .25vw #fdf8cb, .4vw 0vw .25vw #fdf8cb, 
+    
+    .1vw 0vw   0vw #f5f69f, .2vw 0vw   0vw #f5f69f, .4vw 0vw   0vw #f5f69f,
+    .1vw 0vw  .1vw #f6e75d, .2vw 0vw  .1vw #f6e75d, .4vw 0vw  .1vw #f6e75d,
+    .1vw 0vw   2vw #eff148, .2vw 0vw   2vw #eff148, .4vw 0vw   2vw #eff148, 
+    
+    .1vw 0vw   1vw #f1de36, .2vw 0vw   1vw #f1de36, .4vw 0vw   5vw #f1de36, 
+    .1vw 0vw   5vw #dbc818, .2vw 0vw  20vw #dbc818, .4vw 0vw  10vw #dbc818,
+    .1vw 0vw  10vw #f0c508, .2vw 0vw  30vw #f0c508, .4vw 0vw  10vw #f0c508;
+}
+
+.neonWelcome h2{
+    color: rgb(166, 16, 172);
+    font-family: Monoton-Regular;
+    font-size: 3em;
+    text-shadow: 
+    .1vw 0vw .25vw #fbcbfd, .2vw 0vw .25vw #fbcbfd, .4vw 0vw .25vw #fbcbfd, 
+    
+    .1vw 0vw   0vw #edaffa, .2vw 0vw   0vw #edaffa, .4vw 0vw   0vw #edaffa,
+    .1vw 0vw  .1vw #f898eb, .2vw 0vw  .1vw #f898eb, .4vw 0vw  .1vw #f898eb,
+    .1vw 0vw   2vw #da81e6, .2vw 0vw   2vw #da81e6, .4vw 0vw   2vw #da81e6, 
+    
+    .1vw 0vw   1vw #d555ec, .2vw 0vw   1vw #d555ec, .4vw 0vw   5vw #d555ec, 
+    .1vw 0vw   5vw #bc3cd3, .2vw 0vw  20vw #bc3cd3, .4vw 0vw  10vw #bc3cd3,
+    .1vw 0vw  10vw #420544, .2vw 0vw  30vw #420544, .4vw 0vw  10vw #420544;
+}
+
+h3 {
+    /* margin-top: 10px; */
+    font-family: Monoton-Regular;
+    color:rgb(104, 19, 83);
+    text-shadow: rgb(218, 118, 193);
+    font-size: 1.7em;
+}
+
+
+#startText {
+    padding: 10px;
+    color:rgb(104, 19, 83);
+    text-shadow: rgb(218, 118, 193);
+    font-size: 2em;
+}
+
+button {
+    margin: 50px;
+    padding: 10px;
+    width: 200px;
+    border: 2px solid rgba(241, 44, 176, 0.7);
+    box-shadow: 1px 1px 15px 4px rgb(200, 9, 185);
+    border-radius: 15px;
+    transition-duration: 1s;
+    font-size: 2.5em;
+    color:rgb(95, 11, 88);
+    font-weight: 700;
+    font-family: 'Handlee', cursive;
+}
+
+button:hover {
+    background-color: rgba(224, 113, 187, 0.4);
+}
+
+a {
+    text-decoration: none;
+}

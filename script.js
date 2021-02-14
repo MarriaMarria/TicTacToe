@@ -1,3 +1,10 @@
+
+let players = {
+    X:"",
+    O:""
+};
+let gameWinner = false;
+
 const name1 = document.querySelector("#name1");
 const name2 = document.querySelector("#name2");
 
@@ -27,9 +34,13 @@ whoStarts.addEventListener('click', () => {
     let turn = Math.floor(Math.random() * 2); // returns 0 or 1
         if (turn == 0) {
             console.log("It is 0");
+            players.X=name1.value;
+            players.O=name2.value;
             showsWhoStarts.innerText = `${name1.value} starts`;
         } else {
             console.log("It is 1");
+            players.X=name2.value;
+            players.O=name1.value;
             showsWhoStarts.innerText = `${name2.value} starts`;
     }
 })
@@ -46,102 +57,63 @@ console.log(fieldSquares);
 // adding an event listener to all 9 squares with the class field
 fieldSquares.forEach((square, i) => {
     square.addEventListener("click", function(event) {
+        if(event.target.innerText === "") {
+            event.target.innerText=currentGamer;
+            event.target.classList.add("xoDecoration");
+            count = count - 1;
+            checkWinner();
+            if (!gameWinner) {
+                // if (currentGamer === "X") {
+                //     currentGamer = "O";
+                // }else {
+                //     currentGamer = "X";
+                // }
+                currentGamer = currentGamer === "X" ? "O":"X"; 
+                showsWhoStarts.innerText = `${players[currentGamer]}'s turn`;
 
-        if (currentGamer === "X") {
-            if (event.target.innerText === "") { // checking if the square is empty
-                event.target.innerText = "X";
-                event.target.classList.add("xoDecoration");
-                currentGamer = "O"; 
-                console.log(currentGamer);
-                showsWhoStarts.innerText = `${name2.value}'s turn`;
-                count = count - 1;
-                console.log(count);
-                checkWinner();
             }
-        } 
-        if (currentGamer == "O") {
-            if (event.target.innerText == "") {
-                event.target.innerText = "O";
-                event.target.classList.add("xoDecoration");
-                currentGamer = "X";
-                console.log(currentGamer);
-                showsWhoStarts.innerText = `${name1.value}'s turn`;
-                count = count - 1;
-                console.log(count);
-                checkWinner();
-            }
+            checkIfDraw(); 
         }
-        checkIfDraw(); 
-
     })
+    
 })
 
-=
+
 function checkIfDraw() {
     if (count === 0) {
-        console.log("It's a draw!");
+        alert("It's a draw!");
         // draw.style.display = "block";
     }
 }
 
-let gameWinner = false;
+
 
 function checkWinner() {
+    const winningCombos= [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+
+// combo = [0.1.2], [3.4.5] etc
+// ex with [3.4.5] => combo[0] =3, combo[1] = 4, combo[2] = 5;
+// fieldValues[3] = what is inside 3 => x or o etc
     const fieldValues = [...fieldSquares].map((square) => square.innerText) // copy array
-        console.log(fieldValues);
-        if (fieldValues[0] !== "" && fieldValues[0] === fieldValues[1] && fieldValues[0] === fieldValues[2]) {
-            alert(fieldValues[0] + " is a winner!!!!!");
+    for (combo of winningCombos){
+        if (fieldValues[combo[0]] !== "" && fieldValues[combo[0]] === fieldValues[combo[1]] && fieldValues[combo[0]] === fieldValues[combo[2]]){
+            alert(players[currentGamer] + " is a winner!!!!!");
             gameWinner = true;
             congrats();
-        } else if (fieldValues[3] !== "" && fieldValues[3] === fieldValues[4] && fieldValues[3] === fieldValues[5]) {
-            alert(fieldValues[3] + " is a winner!!!!");
-            gameWinner = true;
-            congrats();
-        } else if (fieldValues[6] !== "" && fieldValues[6] === fieldValues[7] && fieldValues[6] === fieldValues[8]) {
-            alert(fieldValues[6] + " is a winner!!!!");
-            gameWinner = true;
-            congrats();
-        } else if (fieldValues[0] !== "" && fieldValues[0] === fieldValues[3] && fieldValues[0] === fieldValues[6]) {
-            alert(fieldValues[0] + " is a winner!!!!!");
-            gameWinner = true;
-            congrats();
-        } else if (fieldValues[1] !== "" && fieldValues[1] === fieldValues[4] && fieldValues[1] === fieldValues[7]) {
-            alert(fieldValues[1] + " is a winner!!!!!");
-            gameWinner = true;
-            congrats();
-        } else if (fieldValues[2] !== "" && fieldValues[2] === fieldValues[5] && fieldValues[2] === fieldValues[8]) {
-            alert(fieldValues[2] + " is a winner!!!!!");
-            gameWinner = true;
-            congrats();
-        } else if (fieldValues[0] !== "" && fieldValues[0] === fieldValues[4] && fieldValues[0] === fieldValues[8]) {
-            alert(fieldValues[0] + " is a winner!!!!!");
-            gameWinner = true;
-            congrats();
-        } else if (fieldValues[2] !== "" && fieldValues[2] === fieldValues[4] && fieldValues[2] === fieldValues[6]) {
-            alert(fieldValues[2] + " is a winner!!!!!");
-            gameWinner = true;
-            congrats();
-        } else {
-            return false;
         }
-        return true;
     }
 
-function replay() {
-    // check who won
-    // write that it's his turn
-    // clear()
-    // can I associate the name of the winner with x or o?
-    // meaning that I could write NAME won! And use it to let him start next round
-}
+    }
+
 
 function clear() { // clears the field
     for (let i = 0; i < fieldSquares.length; i++) {
         fieldSquares[i].innerHTML = '';
     }
+    count = 9;
+    gameWinner=false;
 }
 
-// how can I add the gamer here to know who won?
 function congrats() {
     if (gameWinner) {
         alert("CONGRATULATIONS! YOU WON!")
